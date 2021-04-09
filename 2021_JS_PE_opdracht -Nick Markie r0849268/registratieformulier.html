@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2021_JS_PE_Opdracht_r0849268</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Nick Markie" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/huisstijl.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="container">
+    <div class="row">
+    <div class="col">
+        <h1>Registratieformulier</h1>
+
+        <p>Meld je aan om toegang te krijgen tot onze diensten.</p>
+        <hr />
+        <form name="RegForm" method="POST" onclick="return validateForm()">          
+            <div class="form-row">
+                
+                <div class="col">
+                    <label for="voornaam">Uw voornaam</label>
+                    <input type="text" class="form-control" placeholder="voornaam">
+                </div>
+                <div class="col">
+                    <label for="familienaam">Uw familienaam</label>
+                    <input type="text" class="form-control" placeholder="familienaam">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="gebruikersnaam">Gebruikersnaam</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                    <input type="text" class="form-control" placeholder="gebruikersnaam">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="e-mail">E-mailadres</label>
+                    <input type="text" class="form-control" placeholder="e-mailadres">
+                    <small id="emailHelp" class="form-text text-muted">Uw e-mailadres wordt niet gedeeld met derden!</small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="wachtwoord">Wachtwoord</label>
+                    <input type="text" class="form-control" placeholder="wachtwoord">
+                    <small id="wachtwoordHelp" class="form-text text-muted">Minstens 8 tekens lang!</small>
+                </div>
+                <div class="col">
+                    <label for="herhaalwachtwoord">Herhaal uw wachtwoord</label>
+                    <input type="text" class="form-control" placeholder="Herhaal wachtwoord">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="adres">Uw adres hier</label>
+                    <input type="text" class="form-control" placeholder="Vul uw adres in.">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="land">Land</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Maak uw keuze</option>
+                        <option>België</option>
+                        <option>Nederland</option>
+                        <option>Frankrijk</option>
+                        <option>Duitsland</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="provincie">Provincie</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Maak uw keuze</option>
+                        <option>West-Vlaanderen</option>
+                        <option>Oost-Vlaanderen</option>
+                        <option>Antwerpen</option>
+                        <option>Limburg</option>
+                        <option>Vlaams-Brabant</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" class="form-control" placeholder="Postcode">
+                </div>
+            </div>
+            <hr />
+            <div class="form-row">
+                <div class="col">
+                    <h5>Geef me de laatste nieuwtjes</h5>
+                    <div class="form-check">                    
+                        <input class="form-check-input" type="checkbox" id="nieuwsbrief">
+                        <label-sm class="form-check-label" for="nieuwsbrief"> Hier met die nieuwsbrief!</label-sm>
+                    </div>
+                    <div class="form-check"> 
+                        <input class="form-check-input" type="checkbox" id="geenspam">
+                        <label-sm class="form-check-label" for="geenspam"> Laat me met rust!</label-sm>
+                    </div>
+                    <h6>Algemene voorwaarden</h6>
+                    <div class="form-check">                    
+                        <input class="form-check-input" type="checkbox" id="voorwaarden">
+                        <label-sm class="form-check-label" for="nieuwsbrief">Ik ga akkoord met de <a href="teksten/Algemene voorwaarden.pdf" target="_blank"> algemene voorwaarden</a></label-sm>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Betalingswijze</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="bankapp" value="optie1">
+                        <label-sm class="form-check-label" for="bankkaart">Bankapp</label-sm>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="overschrijving" value="optie2">
+                        <label-sm class="form-check-label" for="overschrijving">Met overschrijving</label-sm>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="kredietkaard" value="optie3">
+                        <label-sm class="form-check-label" for="kredietkaard">kredietkaard</label-sm>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="paypal" value="optie4">
+                        <label-sm class="form-check-label" for="paypal">PayPal</label-sm>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">  
+                <div class="col-auto">             
+                <button type="button" value="inzenden"  class="btn-primary btn-lg">Laat mij tot uw magische wereld toetreden!!</button>  
+                </div> 
+            </div>
+        </form>
+    </div>
+    <div class="col-4" id="alerts">
+        <div class="alert alert-danger" role="alert" id="error">
+            <h6>Oeps, daar ging wat fout</h6>
+            <p id="foutmelding"></p>
+        </div>
+        <div class="alert alert-success" role="alert" id="noError">
+            <h4>Goed gedaan!</h4>
+            <p>Je werd succesvol geregistreerd!</p>
+    </div>
+    </div>  
+    </main>
+    <script src="js/validatie.js"></script>
+</body>
+</html>

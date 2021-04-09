@@ -1,0 +1,14 @@
+label {
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+hr {
+    border: 2px dashed black;
+}
+
+h6 {
+    margin-top: 10px;
+}
+
